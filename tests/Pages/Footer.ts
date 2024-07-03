@@ -4,6 +4,7 @@ import { Locator, Page } from '@playwright/test';
 
 class Footer {
     readonly page: Page;
+    readonly footerMenu:Locator;
     readonly logoLink:Locator;
     readonly contactUsPageLink: Locator;
     readonly aboutUsPageLiink:Locator;
@@ -19,6 +20,7 @@ class Footer {
 
     constructor(page: Page) {
         this.page = page;
+        this.footerMenu=this.page.getByRole('contentinfo').locator('div').first();
         this.logoLink= this.page.getByRole('navigation').getByRole('link', { name: 'logo' });
         this.aboutUsPageLiink=this.page.getByRole('navigation').getByRole('link', { name: 'About Us' });
         this.servicePageLink=this.page.getByRole('navigation').getByRole('link', { name: 'Services' });
