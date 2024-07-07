@@ -3,7 +3,7 @@ import ServicePage from "../Pages/Services"
 import Header from "../Pages/Header"
 import Footer from "../Pages/Footer"
 test("Verify Service page is visible ", async ({ page }) => {
-   
+  await page.goto("/")
     const servicePage = new ServicePage(page)
     const header=new Header(page)
     const footer= new Footer(page)
